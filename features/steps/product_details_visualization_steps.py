@@ -29,17 +29,19 @@ def click_off_plan(context):
 
 @when('Click on the first product')
 def click_first_product(context):
-    context.driver.find_element(By.CSS_SELECTOR, "[wized*='cardOfProperty']").click()
-    context.wait.until(EC.presence_of_element_located(ARCH))
+    # context.driver.find_element(By.CSS_SELECTOR, "[wized*='cardOfProperty']").click()
+    context.app.total_projects_page.click_first_product()
 
 
 @then('Verify the three options of visualization are “architecture”, “interior”, “lobby”')
 def verify_architecture(context):
-    context.wait.until(EC.presence_of_element_located(ARCH))
-    context.wait.until(EC.presence_of_element_located(INT))
-    context.wait.until(EC.presence_of_element_located(LOB))
+    context.app.product_page.verify_architecture()
+    # context.wait.until(EC.presence_of_element_located(ARCH))
+    # context.wait.until(EC.presence_of_element_located(INT))
+    # context.wait.until(EC.presence_of_element_located(LOB))
 
 
 @then('Verify the visualization options are clickable')
 def verify_interior(context):
-    context.wait.until(EC.element_to_be_clickable(ARCH)).click()
+    context.app.product_page.verify_interior()
+    # context.wait.until(EC.element_to_be_clickable(ARCH)).click()
