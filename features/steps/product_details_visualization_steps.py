@@ -13,12 +13,21 @@ def open_reelly(context):
     context.app.sign_in_page.open_reelly()
 
 
-@when('Log in to the page')
+
+@when('Enter email')
+def email(context):
+    context.app.sign_in_page.email('chynawright06@gmail.com')
+    # context.driver.find_element(By.ID, 'email-2').send_keys('chynawright06@gmail.com')
+    # context.driver.find_element(By.ID, 'field').send_keys('Freedom$99')
+    # context.driver.find_element(By.CSS_SELECTOR, "[class*='login-button w-button']").click()
+
+@when('Enter Password')
+def password(context):
+    context.app.sign_in_page.password('Freedom$99')
+
+@when('Click login button')
 def login(context):
-    #context.app.sign_in_page.login()
-    context.driver.find_element(By.ID, 'email-2').send_keys('chynawright06@gmail.com')
-    context.driver.find_element(By.ID, 'field').send_keys('Freedom$99')
-    context.driver.find_element(By.CSS_SELECTOR, "[class*='login-button w-button']").click()
+    context.app.sign_in_page.login()
 
 
 @when('Click “off plan” on the left side of the menu')
