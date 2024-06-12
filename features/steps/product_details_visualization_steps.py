@@ -54,3 +54,5 @@ def verify_architecture(context):
 def verify_interior(context):
     context.app.product_page.verify_interior()
     # context.wait.until(EC.element_to_be_clickable(ARCH)).click()
+
+
